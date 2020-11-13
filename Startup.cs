@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using alone_mysql_dc_comics.Data;
 using alone_mysql_dc_comics.Services;
 using alone_mysql_dc_comics.Services.CharacterService;
+using alone_mysql_dc_comics.Services.FamilyService;
+using alone_mysql_dc_comics.Services.PowerService;
+using alone_mysql_dc_comics.Services.TeamService;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,6 +37,9 @@ namespace alone_mysql_dc_comics
             services.AddControllers();
             services.AddAutoMapper(typeof(Startup ));
             services.AddScoped<ICharacterService,CharacterService>();
+            services.AddScoped<IFamilyService,FamilyService>();
+            services.AddScoped<ITeamService,TeamService>();
+            services.AddScoped<IPowerService,PowerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
