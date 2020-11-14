@@ -45,3 +45,10 @@
 /media/navidu/New Volume E/Tutorials/ASP.NET/Work/alone-mysql-dc-comics/obj/Debug/netcoreapp3.1/alone-mysql-dc-comics.dll
 /media/navidu/New Volume E/Tutorials/ASP.NET/Work/alone-mysql-dc-comics/obj/Debug/netcoreapp3.1/alone-mysql-dc-comics.pdb
 /media/navidu/New Volume E/Tutorials/ASP.NET/Work/alone-mysql-dc-comics/obj/Debug/netcoreapp3.1/alone-mysql-dc-comics.genruntimeconfig.cache
+/media/navidu/New Volume E/Tutorials/ASP.NET/Work/alone-mysql-dc-comics/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Logging.dll
+/media/navidu/New Volume E/Tutorials/ASP.NET/Work/alone-mysql-dc-comics/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Tokens.dll
+/media/navidu/New Volume E/Tutorials/ASP.NET/Work/alone-mysql-dc-comics/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.JsonWebTokens.dll
+/media/navidu/New Volume E/Tutorials/ASP.NET/Work/alone-mysql-dc-comics/bin/Debug/netcoreapp3.1/System.IdentityModel.Tokens.Jwt.dll
+/media/navidu/New Volume E/Tutorials/ASP.NET/Work/alone-mysql-dc-comics/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/media/navidu/New Volume E/Tutorials/ASP.NET/Work/alone-mysql-dc-comics/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Protocols.dll
+/media/navidu/New Volume E/Tutorials/ASP.NET/Work/alone-mysql-dc-comics/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

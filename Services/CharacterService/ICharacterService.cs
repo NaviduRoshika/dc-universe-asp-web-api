@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using alone_mysql_dc_comics.Dto.Character;
+using alone_mysql_dc_comics.Dto.User;
 using alone_mysql_dc_comics.Models;
 
 namespace alone_mysql_dc_comics.Services
@@ -13,5 +14,6 @@ namespace alone_mysql_dc_comics.Services
          Task<ServiceResponse<List<GetCharacterDto>>> DeleteCharacter(DeleteCharacterDto toDelete);
          Task<ServiceResponse<GetCharacterDto>> GetCharacterById(int id);
          Task<ServiceResponse<GetCharacterDto>> AddCharacterPower(AddCharacterPowerDto newPower);
+         Task<ServiceResponse<int>> AddUserRating(UserRatingDto rating);
     }
 }

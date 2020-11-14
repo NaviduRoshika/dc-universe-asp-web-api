@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using alone_mysql_dc_comics.Data;
 
 namespace alone_mysql_dc_comics.Migrations
 {
     [DbContext(typeof(DcDbContext))]
-    partial class DcDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201113091742_AddUser")]
+    partial class AddUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,27 +108,6 @@ namespace alone_mysql_dc_comics.Migrations
                     b.ToTable("Powers");
                 });
 
-            modelBuilder.Entity("alone_mysql_dc_comics.Models.Role", b =>
-                {
-                    b.Property<int>("RoleId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.HasKey("RoleId");
-
-                    b.ToTable("Roles");
-
-                    b.HasData(
-                        new
-                        {
-                            RoleId = 1,
-                            Name = "Fan"
-                        });
-                });
-
             modelBuilder.Entity("alone_mysql_dc_comics.Models.Team", b =>
                 {
                     b.Property<int>("TeamId")
@@ -159,37 +140,12 @@ namespace alone_mysql_dc_comics.Migrations
                     b.Property<byte[]>("PaswordSalt")
                         .HasColumnType("longblob");
 
-                    b.Property<int>("RoleId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasDefaultValue(1);
-
                     b.Property<string>("UserName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RoleId");
-
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("alone_mysql_dc_comics.Models.UserRating", b =>
-                {
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CharacterId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Rating")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserId", "CharacterId");
-
-                    b.HasIndex("CharacterId");
-
-                    b.ToTable("UserRatings");
                 });
 
             modelBuilder.Entity("alone_mysql_dc_comics.Models.Character", b =>
@@ -221,30 +177,6 @@ namespace alone_mysql_dc_comics.Migrations
                     b.HasOne("alone_mysql_dc_comics.Models.Character", "Character")
                         .WithOne("Family")
                         .HasForeignKey("alone_mysql_dc_comics.Models.Family", "CharacterId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("alone_mysql_dc_comics.Models.User", b =>
-                {
-                    b.HasOne("alone_mysql_dc_comics.Models.Role", "Role")
-                        .WithMany("Users")
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("alone_mysql_dc_comics.Models.UserRating", b =>
-                {
-                    b.HasOne("alone_mysql_dc_comics.Models.Character", "Character")
-                        .WithMany("UserRatings")
-                        .HasForeignKey("CharacterId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("alone_mysql_dc_comics.Models.User", "User")
-                        .WithMany("UserRatings")
-                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -1,10 +1,12 @@
 using System.Threading.Tasks;
 using alone_mysql_dc_comics.Dto.Family;
 using alone_mysql_dc_comics.Services.FamilyService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace alone_mysql_dc_comics.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class FamilyController : ControllerBase

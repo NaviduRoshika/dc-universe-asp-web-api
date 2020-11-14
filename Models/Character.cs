@@ -13,6 +13,7 @@ namespace alone_mysql_dc_comics.Models
         public int TeamId { get; set; }
         public Team Team { get; set; }
         public List<CharacterPower> CharacterPowers { get; set; }
+        public List<UserRating> UserRatings { get; set; }
 
     }
 }

@@ -1,10 +1,12 @@
 using System.Threading.Tasks;
 using alone_mysql_dc_comics.Dto.Team;
 using alone_mysql_dc_comics.Services.TeamService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace alone_mysql_dc_comics.Controllers
 {
+    [Authorize(Roles = "Fan,Admin")]
     [ApiController]
     [Route("[controller]")]
     public class TeamController:ControllerBase
@@ -16,6 +18,7 @@ namespace alone_mysql_dc_comics.Controllers
             
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost("Create")]
         public async Task<IActionResult> AddNewTeam(AddTeamDto newTeam){
             return Ok(await _teamService.AddTeam(newTeam));

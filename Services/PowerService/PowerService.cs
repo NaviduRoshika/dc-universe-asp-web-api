@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using alone_mysql_dc_comics.Data;
 using alone_mysql_dc_comics.Dto.Power;
 using alone_mysql_dc_comics.Models;
 using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
 namespace alone_mysql_dc_comics.Services.PowerService
@@ -13,18 +15,25 @@ namespace alone_mysql_dc_comics.Services.PowerService
     {
         private readonly DcDbContext _context;
         private readonly IMapper _mapper;
-        public PowerService(DcDbContext context, IMapper mapper)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        
+        public PowerService(DcDbContext context, IMapper mapper, IHttpContextAccessor httpContextAccessor)
         {
+            _httpContextAccessor = httpContextAccessor;
             _mapper = mapper;
             _context = context;
 
         }
+        private int GetUserId() => int.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
+        
+        private string GetUserRole() => _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Role);
+        
         public async Task<ServiceResponse<List<GetPowerDto>>> AddPower(AddPowerDto newPower)
         {
             ServiceResponse<List<GetPowerDto>> response = new ServiceResponse<List<GetPowerDto>>();
             try
             {
-                Power power = _mapper.Map<Power>(newPower); 
+                Power power = _mapper.Map<Power>(newPower);
                 await _context.Powers.AddAsync(power);
                 await _context.SaveChangesAsync();
                 response.Data = await (_context.Powers.Include(cs => cs.CharacterPowers).ThenInclude(c => c.Character)
@@ -67,7 +76,8 @@ namespace alone_mysql_dc_comics.Services.PowerService
                                             .Include(cp => cp.CharacterPowers)
                                             .ThenInclude(c => c.Character)
                                             .FirstOrDefaultAsync(p => p.PowerId == id);
-                if(power != null){
+                if (power != null)
+                {
                     response.Data = _mapper.Map<GetPowerDto>(power);
                 }
                 else

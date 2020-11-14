@@ -1,10 +1,12 @@
 using System.Threading.Tasks;
 using alone_mysql_dc_comics.Dto.Power;
 using alone_mysql_dc_comics.Services.PowerService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace alone_mysql_dc_comics.Controllers
 {
+    [Authorize(Roles = "Fan,Admin")]
     [ApiController]
     [Route("[controller]")]
     public class PowerController : ControllerBase
@@ -15,6 +17,7 @@ namespace alone_mysql_dc_comics.Controllers
             _powerService = powerService;
         }
 
+        [Authorize(Roles = "Admin")]
         [Route("Create")]
         public async Task<IActionResult> AddTeam(AddPowerDto newPower){
             return Ok(await _powerService.AddPower(newPower));

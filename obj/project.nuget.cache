@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "rtiKIArocvLDzHPKaL+r9uUIZiSjd1NCpMpZaZ44M+EuTSdZJ4JKsODPyTqKOMvrRYizVXWtTFoHQUtsVeZr4w==",
+  "dgSpecHash": "b8UKVOpZi3kWdhvKrpnDQEh+2fS2BEAFxHYrP9rwO6Lges/BYEmm/py6CxKxyfxaXHsgV/2rVk7UeKszDYS2dw==",
   "success": true,
   "projectFilePath": "/media/navidu/New Volume E/Tutorials/ASP.NET/Work/alone-mysql-dc-comics/alone-mysql-dc-comics.csproj",
   "expectedPackageFiles": [
     "/home/navidu/.nuget/packages/automapper/10.1.0/automapper.10.1.0.nupkg.sha512",
     "/home/navidu/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.0/automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
+    "/home/navidu/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/3.1.10/microsoft.aspnetcore.authentication.jwtbearer.3.1.10.nupkg.sha512",
     "/home/navidu/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/home/navidu/.nuget/packages/microsoft.bcl.hashcode/1.1.0/microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "/home/navidu/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
@@ -25,6 +26,11 @@
     "/home/navidu/.nuget/packages/microsoft.extensions.logging.abstractions/3.1.9/microsoft.extensions.logging.abstractions.3.1.9.nupkg.sha512",
     "/home/navidu/.nuget/packages/microsoft.extensions.options/3.1.9/microsoft.extensions.options.3.1.9.nupkg.sha512",
     "/home/navidu/.nuget/packages/microsoft.extensions.primitives/3.1.9/microsoft.extensions.primitives.3.1.9.nupkg.sha512",
+    "/home/navidu/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.8.0/microsoft.identitymodel.jsonwebtokens.6.8.0.nupkg.sha512",
+    "/home/navidu/.nuget/packages/microsoft.identitymodel.logging/6.8.0/microsoft.identitymodel.logging.6.8.0.nupkg.sha512",
+    "/home/navidu/.nuget/packages/microsoft.identitymodel.protocols/5.5.0/microsoft.identitymodel.protocols.5.5.0.nupkg.sha512",
+    "/home/navidu/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/5.5.0/microsoft.identitymodel.protocols.openidconnect.5.5.0.nupkg.sha512",
+    "/home/navidu/.nuget/packages/microsoft.identitymodel.tokens/6.8.0/microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
     "/home/navidu/.nuget/packages/mysqlconnector/0.69.9/mysqlconnector.0.69.9.nupkg.sha512",
     "/home/navidu/.nuget/packages/newtonsoft.json/11.0.2/newtonsoft.json.11.0.2.nupkg.sha512",
     "/home/navidu/.nuget/packages/pomelo.entityframeworkcore.mysql/3.2.4/pomelo.entityframeworkcore.mysql.3.2.4.nupkg.sha512",
@@ -32,7 +38,9 @@
     "/home/navidu/.nuget/packages/system.collections.immutable/1.7.1/system.collections.immutable.1.7.1.nupkg.sha512",
     "/home/navidu/.nuget/packages/system.componentmodel.annotations/4.7.0/system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "/home/navidu/.nuget/packages/system.diagnostics.diagnosticsource/4.7.1/system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
-    "/home/navidu/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512"
+    "/home/navidu/.nuget/packages/system.identitymodel.tokens.jwt/6.8.0/system.identitymodel.tokens.jwt.6.8.0.nupkg.sha512",
+    "/home/navidu/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512",
+    "/home/navidu/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }
